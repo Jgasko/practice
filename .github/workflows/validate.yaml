@@ -1,0 +1,16 @@
+---
+name: validate
+
+on: [push]
+
+jobs:
+  validate:
+    name: Validate
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@master
+      - name: cfn-lint
+        uses: scottbrenner/cfn-lint-action@master
+        with:
+          args: "cloudformation/*.yaml"
