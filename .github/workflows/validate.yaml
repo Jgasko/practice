@@ -14,3 +14,7 @@ jobs:
         uses: scottbrenner/cfn-lint-action@master
         with:
           args: "cloudformation/*.yaml"
+      - name: cfn_nag
+        uses: stelligent/cfn_nag@master
+        with:
+          input_path: "cloudformation/*.yaml"
