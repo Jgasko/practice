@@ -11,11 +11,12 @@ RUN apt-get update \
         curl
 # Install Pip packages
 RUN pip3 install \
-    cfn-lint
+    cfn-lint \
+    pylint
 
 # Install Ruby Gems
 RUN gem install \
-    cfn_nag
+    cfn-nag
 
 # Install AWS CLI V2
 RUN curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip" \
