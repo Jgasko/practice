@@ -1,0 +1,14 @@
+AWSTemplateFormatVersion: 2010-09-09
+Description: CloudFormation Template to create IAM User
+
+Parameters:
+  UserName:
+    Type: String
+    Description: IAM User Name
+    Default: Joe
+
+Resources:
+  User:
+    Type: AWS::IAM::User
+    Properties:
+      UserName: !Ref UserName
