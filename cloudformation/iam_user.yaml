@@ -8,7 +8,22 @@ Parameters:
     Default: Joe
 
 Resources:
-  User:
+  AdminUser:
     Type: AWS::IAM::User
     Properties:
       UserName: !Ref UserName
+  AdminGroup:
+    Type: AWS::IAM::Group
+    Metadata:
+      cfn_nag:
+        rules_to_suppress:
+          - id: W28
+            reason: "Because I want to!"
+    Properties:
+      GroupName: Admin
+  Users:
+    Type: AWS::IAM::UserToGroupAddition
+    Properties:
+      GroupName: !Ref AdminGroup
+      Users:
+        - !Ref AdminUser
