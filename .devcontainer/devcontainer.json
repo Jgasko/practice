@@ -3,6 +3,10 @@
 	"dockerFile": "Dockerfile",
 	"appPort": 9010,
 	"remote.containers.workspaceMountConsistency": "consistent",
+	"runArgs": [
+		// SSH
+		"-v", "${localEnv:HOME}/.ssh:/root/.ssh:ro",
+	],
 	"extensions": [
 		"ms-python.python",
 		"dsteenman.cloudformation-yaml-snippets",
