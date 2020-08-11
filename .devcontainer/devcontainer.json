@@ -1,0 +1,42 @@
+{
+	"name": "Joe Practice Development",
+	"dockerFile": "Dockerfile",
+	"appPort": 9010,
+	"remote.containers.workspaceMountConsistency": "consistent",
+	"extensions": [
+		"ms-python.python",
+		"dsteenman.cloudformation-yaml-snippets",
+		"kddejong.vscode-cfn-lint",
+		"coenraads.bracket-pair-colorizer-2",
+		"redhat.vscode-yaml",
+		"wayou.vscode-todo-highlight"
+	],
+	"settings": {
+		// Bracket Pair Colorizer
+		"bracketPairColorizer.forceUniqueOpeningColor": false,
+		"bracketPairColorizer.colorMode": "Consecutive",
+		"bracketPairColorizer.highlightActiveScope": true,
+		"bracketPairColorizer.activeScopeCSS": [
+			"borderStyle : solid",
+			"borderWidth : 1px",
+			"borderColor : {color}; opacity: 0.5",
+			"backgroundColor : {color}"
+		],
+		"editor.matchBrackets": "never",
+		"bracketPairColorizer.showBracketsInGutter": true,
+		// YAML
+		"[yaml]": {
+			"editor.insertSpaces": true,
+			"editor.tabSize": 2
+		},
+		"yaml.format.enable": true,
+		"yaml.format.singleQuote": true,
+		"yaml.format.bracketSpacing": true,
+		"yaml.format.printWidth": 120,
+		"yaml.format.proseWrap": "always",
+		// TODO
+		"todohighlight.isEnable": true,
+		"todohighlight.isCaseSensitive": false
+	},
+	"postCreateCommand": "echo 'Hello World!'"
+}
